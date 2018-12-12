@@ -1,4 +1,6 @@
 package com.example.sebastian.prueba.Repositorios;
 
-public class IniciarSesion {
+public class IniciarSesion
+{
+
 }

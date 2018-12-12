@@ -9,12 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.sebastian.prueba.Base.BaseFragment;
 import com.example.sebastian.prueba.Modelos.Categoria;
 import com.example.sebastian.prueba.Presentacion.Pedir.ListaCategorias.Interfaces.IListaCategoriasPresenter;
 import com.example.sebastian.prueba.Presentacion.Pedir.ListaCategorias.Interfaces.IListaCategoriasView;
 import com.example.sebastian.prueba.R;
 
-public class ListaCategoriasFragment extends Fragment
+public class ListaCategoriasFragment extends BaseFragment
 {
     private IListaCategoriasPresenter iListaCategoriasPresenter;
     public ListaCategoriasFragmentListener listener;
@@ -40,13 +41,13 @@ public class ListaCategoriasFragment extends Fragment
 
     private void escuchadores(){
         iListaCategoriasPresenter = new ListaCategoriasPresenter(getActivity(), new AccionesVista());
-        Button btnArriba = (Button) vista.findViewById(R.id.iniciarSesionArriba);
-        btnArriba.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listaCategorias();
-            }
-        });
+       // Button btnArriba = (Button) vista.findViewById(R.id.iniciarSesionArriba);
+        //btnArriba.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+           // public void onClick(View v) {
+            //    listaCategorias();
+            //}
+        //});
     }
 
     //Por ahora este método solo retorna un elemento del tipo categoría

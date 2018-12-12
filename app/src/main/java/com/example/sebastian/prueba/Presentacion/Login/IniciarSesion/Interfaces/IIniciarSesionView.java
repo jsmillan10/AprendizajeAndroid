@@ -1,5 +1,8 @@
 package com.example.sebastian.prueba.Presentacion.Login.IniciarSesion.Interfaces;
 
-public interface IIniciarSesionView {
+import com.example.sebastian.prueba.Base.IBaseView;
+
+public interface IIniciarSesionView extends IBaseView
+{
     void usuarioValido();
 }

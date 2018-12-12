@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.sebastian.prueba.Base.BaseActivity;
 import com.example.sebastian.prueba.Presentacion.Login.IniciarSesion.Implementacion.InicioSesionFragment;
-import com.example.sebastian.prueba.Presentacion.MainActivity;
+import com.example.sebastian.prueba.Presentacion.Pedir.PedirActivity;
+import com.example.sebastian.prueba.Presentacion.SplashActivity;
 import com.example.sebastian.prueba.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public void navegarDash() {
             finish();
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, PedirActivity.class));
         }
     }
 

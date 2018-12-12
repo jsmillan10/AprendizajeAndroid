@@ -1,5 +1,8 @@
 package com.example.sebastian.prueba.Presentacion.Pedir.ListaMusicos.Interfaces;
 
-public interface IListaMusicosListener {
+import com.example.sebastian.prueba.Base.IBaseListener;
+
+public interface IListaMusicosListener extends IBaseListener
+{
     void musicoValido();
 }

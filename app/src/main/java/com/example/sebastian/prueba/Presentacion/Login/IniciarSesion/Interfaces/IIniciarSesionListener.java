@@ -1,5 +1,9 @@
 package com.example.sebastian.prueba.Presentacion.Login.IniciarSesion.Interfaces;
 
-public interface IIniciarSesionListener {
+import com.example.sebastian.prueba.Base.IBaseListener;
+
+public interface IIniciarSesionListener extends IBaseListener
+{
+
     void usuarioValido();
 }

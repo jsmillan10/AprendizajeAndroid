@@ -10,17 +10,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.sebastian.prueba.Base.BaseFragment;
+import com.example.sebastian.prueba.Componentes.DialogoArtista;
 import com.example.sebastian.prueba.Modelos.Usuario;
 import com.example.sebastian.prueba.Presentacion.Login.IniciarSesion.Interfaces.IIniciarSesionPresenter;
 import com.example.sebastian.prueba.Presentacion.Login.IniciarSesion.Interfaces.IIniciarSesionView;
 import com.example.sebastian.prueba.Presentacion.Login.LoginActivity;
 import com.example.sebastian.prueba.R;
 
-public class InicioSesionFragment extends Fragment {
+public class InicioSesionFragment extends BaseFragment {
 
     private IIniciarSesionPresenter iIniciarSesionPresenter;
     public InicioSesionFragmentListener listener;
     private View vista;
+
 
     @Nullable
     @Override
@@ -34,6 +37,7 @@ public class InicioSesionFragment extends Fragment {
     public void onResume() {
         super.onResume();
         escuchadores();
+        mostrarDialogo("Hola","Tenemos suenio", "Alerta, está aplicacion esta acabando nosotros",new AccionesDialogo());
     }
 
     private void escuchadores(){
@@ -64,6 +68,32 @@ public class InicioSesionFragment extends Fragment {
         public void usuarioValido() {
 //            Toast.makeText(getActivity(),"Todo bien", Toast.LENGTH_SHORT).show();
             listener.navegarDash();
+        }
+    }
+    private class AccionesDialogo implements DialogoArtista.DialogoAlertaListener
+    {
+
+        @Override
+        public void botonAceptar(String etiqueta) {
+            aparecerProgressBar();
+            Thread uno = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(10000);
+                        desaparecerProgressBar();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            uno.start();
+
+        }
+
+        @Override
+        public void botonCancelar(String etiqueta) {
+            desaparecerProgressBar();
         }
     }
 }

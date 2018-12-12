@@ -9,12 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.sebastian.prueba.Base.BaseFragment;
 import com.example.sebastian.prueba.Modelos.Musico;
 import com.example.sebastian.prueba.Presentacion.Pedir.ListaMusicos.Interfaces.IListaMusicosPresenter;
 import com.example.sebastian.prueba.Presentacion.Pedir.ListaMusicos.Interfaces.IListaMusicosView;
 import com.example.sebastian.prueba.R;
 
-public class ListaMusicosFragment extends Fragment
+public class ListaMusicosFragment extends BaseFragment
 {
     private IListaMusicosPresenter iListaMusicosPresenter;
     public ListaMusicosFragmentListener listener;
