@@ -22,10 +22,6 @@ public class InicioSesionFragment extends Fragment {
     public InicioSesionFragmentListener listener;
     private View vista;
 
-    public interface InicioSesionFragmentListener{
-        void navegarDash();
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -56,6 +52,10 @@ public class InicioSesionFragment extends Fragment {
         user.usuario = "sebas";
         user.contrasenia = "12345";
         iIniciarSesionPresenter.iniciarSesion(user);
+    }
+
+    public interface InicioSesionFragmentListener{
+        void navegarDash();
     }
 
     private class AccionesVista implements IIniciarSesionView {
